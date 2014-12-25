@@ -1,0 +1,12 @@
+<template name="main">
+  <div id="menu">
+    <a href="{{pathFor 'appBody'}}" class="js-add-course btn-secondary">Add Course</a>
+  </div>
+  <div id="course-list">
+    <ul>
+      {{#each courses}}
+        {{> course}}
+      {{/each}}
+    </ul>
+  </div>
+</template>

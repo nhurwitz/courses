@@ -1,6 +1,19 @@
 <template name="appBody">
-	<div id="container">
-		<h1>{{school}}</h1>
-		<a class="js-logout btn-secondary">Logout</a>
-	</div>
+  {{#if currentUser}}
+    <div id="header>"> 
+      <h1><a class="js-to-main btn-secondary">{{school}}</a></h1>
+    </div>
+  	<div id="container">
+      {{#if toMain}}
+  		  {{> main}}
+      {{/if}}
+      {{#if toAddCourse}}
+        {{> addCourse}}
+      {{/if}}
+  	</div>
+    <a class="js-logout btn-secondary">Logout</a>
+  {{/if}}
+  {{#unless currentUser}}
+    {{> signin}}
+  {{/unless}}
 </template>	
