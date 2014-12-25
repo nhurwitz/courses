@@ -52,8 +52,10 @@ Template.join.events({
   
     Accounts.createUser({
       name: firstName + " " + lastName,
+      school: "Uni Versity",
       email: email,
-      password: password
+      password: password,
+      profile: {}
     }, function(error) {
       if (error) {
         return Session.set(ERRORS_KEY, {'none': error.reason});

@@ -1,7 +1,7 @@
 <template name="dispatch">
-	{{#if currentUser}}
-		{{> appBody}}
-	{{else}}
+	{{#unless currentUser}}
 		{{> signin}}
-	{{/if}}
+	{{else}}
+		{{> appBody}}
+	{{/unless}}
 </template>	
