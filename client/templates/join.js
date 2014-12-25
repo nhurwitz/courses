@@ -22,6 +22,7 @@ Template.join.events({
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
+    var school = validEmail(email);
 
     var errors = {};
 
@@ -35,6 +36,10 @@ Template.join.events({
 
     if (! email) {
       errors.email = 'Email required';
+    }
+
+    if(school == INVALID_EMAIL) {
+      errors.edu = '.edu address required';
     }
 
     if (! password) {
@@ -52,7 +57,7 @@ Template.join.events({
   
     Accounts.createUser({
       name: firstName + " " + lastName,
-      school: "Uni Versity",
+      school: school,
       email: email,
       password: password,
       profile: {}
