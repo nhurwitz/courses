@@ -21,8 +21,10 @@ Template.appBody.helpers({
 Template.appBody.events({
 	'click .js-logout': function() {
     	Meteor.logout();
+      Session.set(TO_MAIN, true);
+      Session.set(TO_NEW_COURSE, false);
 	},
   'click .js-to-main': function() {
-      Session.setDefault(TO_MAIN, true);
+      Session.set(TO_MAIN, true);
   }
 });	
