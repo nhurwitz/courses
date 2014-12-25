@@ -8,7 +8,6 @@ Accounts.onCreateUser(function(options, user) {
     if(Schools.find({name: options.school}).count() == 0) {
     	Schools.insert({
     		name: options.school,
-    		courses: {},
     		registered: 1
     	})
     } else {

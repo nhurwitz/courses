@@ -1,10 +1,7 @@
 Template.main.helpers({
-    courses: [
-      {name: "Course 1"},
-      {name: "Course 2"},
-      {name: "Course 3"},
-      {name: "Course 4"} 
-    ] 
+    courses: function() {
+      return Courses.find({school: Meteor.user().profile['school']}).fetch();
+    } 
 }); 
 
 Template.main.events({

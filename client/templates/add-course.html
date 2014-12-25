@@ -1,3 +1,33 @@
 <template name="addCourse">
-  <h3> Add Course </h3>
+  <form>
+      {{#if errorMessages}}
+        <div class="list-errors">
+          {{#each errorMessages}}
+            <div class="list-item">{{this}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
+
+      <div class="input-symbol" {{errorClass 'courseName'}}>
+        <input type="text" name="course-name" placeholder="Course Name" />
+        <span class="icon-email" title="Course Name"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'department'}}>
+        <input type="text" name="department" placeholder="Department" />
+        <span class="icon-email" title="Department"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'courseNumber'}}>
+        <input type="number" name="course-number" placeholder="Course Number" />
+        <span class="icon-email" title="Course Number"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'exists'}}>
+        <input type="text" name="professor" placeholder="Professor" />
+        <span class="icon-lock" title="Professor"></span>
+      </div>
+
+      <button type="submit" class="btn-primary">Add</button>
+    </form>
 </template>

@@ -26,5 +26,6 @@ Template.appBody.events({
 	},
   'click .js-to-main': function() {
       Session.set(TO_MAIN, true);
+      Session.set(TO_NEW_COURSE, false);
   }
 });	
