@@ -17,10 +17,13 @@ Template.addCourse.events({
   'submit': function(event, template) {
     event.preventDefault();
 
-    var courseName = template.$('[name=course-name]').val();
-    var department = template.$('[name=department]').val();
+    var courseName = template.$('[name=course-name]').val()
+      .replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    var department = template.$('[name=department]').val()
+      .toUpperCase();
     var courseNumber = template.$('[name=course-number]').val();
-    var professor = template.$('[name=professor]').val();
+    var professor = template.$('[name=professor]').val()
+      charAt(0).toUpperCase() + string.slice(1);
     var school = Meteor.user().profile['school'];
 
     var errors = {};
