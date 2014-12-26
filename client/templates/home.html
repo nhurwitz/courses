@@ -4,13 +4,21 @@
   </div>
   <div class="main-container">
     <div class="jumbotron">
-      <div class="content-scrollable list-items">    
+      {{#if courses this}}
+        <div class="list-item header">
+          <div class="row-fluid">
+            <div class="span4">Course Name</div>
+            <div class="span4">Course Rating</div>
+          </div>
+        </div>
+      {{/if}}    
+      <div class="content-scrollable list-items">
         {{#each courses this}}
             {{> course}}
           {{else}}
             <div class="wrapper-message">
-              <div class="title-message">No tasks here</div>
-              <div class="subtitle-message">Add new tasks using the field above</div>
+              <div class="title-message">No Courses Yet</div>
+              <div class="subtitle-message">Add New Courses Using the Button on the Left</div>
             </div>
           {{/each}}
       </div>
