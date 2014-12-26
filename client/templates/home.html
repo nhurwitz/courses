@@ -1,12 +1,19 @@
 <template name="home">
-  <ul class="nav nav-pills nav-stacked">
-    <li> <a href="{{pathFor 'appBody'}}" class="js-add-course btn-secondary">Add Course</a></li>
-  </ul>
+  <div class="sidebar">
+    <a href="{{pathFor 'appBody'}}" class="js-add-course">Add Course</a>
+  </div>
   <div class="main-container">
-    <ul>
-      {{#each courses}}
-        {{> course}}
-      {{/each}}
-    </ul>
+    <div class="jumbotron">
+      <div class="content-scrollable list-items">    
+        {{#each courses this}}
+            {{> course}}
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No tasks here</div>
+              <div class="subtitle-message">Add new tasks using the field above</div>
+            </div>
+          {{/each}}
+      </div>
+    </div>
   </div>
 </template>
