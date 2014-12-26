@@ -17,8 +17,8 @@ Template.join.events({
   'submit': function(event, template) {
     event.preventDefault();
 
-    var firstName = template.$('[name=first-name]').val();
-    var lastName = template.$('[name=last-name]').val();
+    var name = template.$('[name=name]').val()
+      .replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
@@ -26,12 +26,8 @@ Template.join.events({
 
     var errors = {};
 
-    if(! firstName) {
-      errors.firstName = "First Name Required";
-    }
-
-    if(! lastName) {
-      errors.lastName = "Last Name Required";
+    if(! name) {
+      errors.name = "First Name Required";
     }
 
     if (! email) {
@@ -56,7 +52,7 @@ Template.join.events({
     }
   
     Accounts.createUser({
-      name: firstName + " " + lastName,
+      name: name,
       school: school,
       email: email,
       password: password,

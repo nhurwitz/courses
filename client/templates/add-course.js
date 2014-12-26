@@ -23,7 +23,7 @@ Template.addCourse.events({
       .toUpperCase();
     var courseNumber = template.$('[name=course-number]').val();
     var professor = template.$('[name=professor]').val()
-      charAt(0).toUpperCase() + string.slice(1);
+      .charAt(0).toUpperCase() + template.$('[name=professor]').val().slice(1);
     var school = Meteor.user().profile['school'];
 
     var errors = {};
@@ -60,7 +60,14 @@ Template.addCourse.events({
       name: courseName,
       department: department,
       courseNumber: courseNumber,
-      professor: [professor]
+      professor: [professor],
+      rating: {
+        overall: 0,
+        easy: 0,
+        interesting: 0,
+        hours: 0
+      },
+      reviews: {}
     }); 
     Session.set(TO_MAIN, true);
     Session.set(TO_NEW_COURSE, false);
