@@ -8,8 +8,7 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Sign In.</h1>
-        <p class="subtitle-auth" >Signing in allows you to view private lists</p>
+        <h1 class="title-auth">Create an Account.</h1>
       	<form>
             {{#if errorMessages}}
               <div class="list-errors">
@@ -21,22 +20,22 @@
 
             <div class="input-symbol" {{errorClass 'name'}}>
               <input type="text" name="name" placeholder="Your Name" />
-              <span class="icon-user-add" title="Your Name"></span>
+              <span class="icon-user" title="Your Name"></span>
             </div>
 
             <div class="input-symbol" {{errorClass 'email'}}>
               <input type="email" name="email" placeholder="Your Email" />
-              <span class="icon-email" title="Your Email"></span>
+              <span class="icon-envelop" title="Your Email"></span>
             </div>
 
             <div class="input-symbol" {{errorClass 'password'}}>
               <input type="password" name="password" placeholder="Password" />
-              <span class="icon-lock" title="Password"></span>
+              <span class="icon-lock2" title="Password"></span>
             </div>
 
             <div class="input-symbol" {{errorClass 'confirm'}}>
               <input type="password" name="confirm" placeholder="Confirm Password" />
-              <span class="icon-lock" title="Confirm Password"></span>
+              <span class="icon-lock2" title="Confirm Password"></span>
             </div>
 
             <button type="submit" class="btn-primary">Join Now</button>

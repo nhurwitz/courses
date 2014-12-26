@@ -1,17 +1,25 @@
 <template name="appBody">
   {{#if currentUser}}
-    <div id="header>"> 
-      <h1><a class="js-to-main btn-secondary">{{school}}</a></h1>
-    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="js-to-main">{{school}}</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="js-logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
   	<div id="container">
       {{#if toMain}}
-  		  {{> main}}
+  		  {{> home}}
       {{/if}}
       {{#if toAddCourse}}
         {{> addCourse}}
       {{/if}}
-  	</div>
-    <a class="js-logout btn-secondary">Logout</a>
+  	</div>     
   {{/if}}
   {{#unless currentUser}}
     {{> signin}}
