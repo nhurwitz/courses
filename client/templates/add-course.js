@@ -37,7 +37,11 @@ Template.addCourse.events({
     }
 
     if (! courseNumber) {
-      errors.courseNumber = 'Course Number required';
+      errors.courseNumber = 'Course Number Required';
+    }
+
+    if (isNaN(courseNumber)) {
+      errors.courseNumber = 'Course Number Required';
     }
 
     var courseId = department + courseNumber;
