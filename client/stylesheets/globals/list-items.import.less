@@ -6,9 +6,12 @@
   .flex-wrap(wrap);
   height: 3rem;
   width: 100%;
-  text-transform: capitalize;
+  .title-caps;
   // Border between list items
-  & + .list-item { border-top: 1px solid #f0f9fb; }
+  & + .list-item {
+   border-top: 1px solid #f0f9fb;
+  }
+
 
   .list-item-name {
     width: 40%;
@@ -22,7 +25,7 @@
   font-style: bold;
   .font-s2;
   .title-caps();
-
+  margin-bottom: 10px;
   .header-name {
     width: 40%;
     float: left;
