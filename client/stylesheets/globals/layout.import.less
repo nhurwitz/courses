@@ -5,7 +5,7 @@
 body {
   .position(absolute, 0, 0, 0, 0);
   background-color: #315481;
-  .background-image( linear-gradient(top, #315481, #918e82 100%) );
+  .background-image( linear-gradient(top, #FFEEEE, #DDEFBB 100%) );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -39,10 +39,19 @@ body {
 }
 
 .navbar .navbar-collapse {
+  .title-caps;
   text-align: center;
   line-height: @navbar-height;
   height: @navbar-height;
   padding-top: 0;
+
+  a {
+    color: #34495e;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 }
 
 .navbar-right {
@@ -55,8 +64,8 @@ body {
 
 #menu {
   .position(absolute, 0, 0, 0, 0, @menu-width);
-  background: @color-tertiary;
   text-align: center;
+  background: #2cc5d2;
   .addcourse {
 
   }
