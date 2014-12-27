@@ -1,10 +1,38 @@
 <template name="currentCourse">
   <div id="content-container">
-    <div class="course-header">
+    <div id="course-header">
       <h1 class="title-course">{{name}}</h1>
       <p class="subtitle-course">{{dept}}{{courseNumber}}</p>
+    </div>
+    <div id="add-review-button">
       <span class="icon-plus"></span>
-      <span class="icon-flag"></span>
+    </div>
+    <div id="back-button">
+      <span class="icon-undo"></span>
+    </div>
+    <div id="overall-rating">
+          {{courseRating}}/5
+        </div>
+    <div id="reviews">
+      <div id="ratings">
+        <ul id="ratings-list">
+          <li> Hours Spent per Week: {{courseHours}}, which is in the (percentile).</li>
+          <li> Difficult Rating: {{courseDifficulty}}, which is in the (percentile).</li>
+          <li> Interest Rating: {{courseInteresting}}, which is in the (percentile).</li>
+        </ul>
+      </div>
+      <div id="text-reviews" class="content-scrollable">
+        {{#if reviews this}}
+        {{/if}}    
+         {{#each reviews this}}
+          "HEY"
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No Reviews Yet</div>
+            <div class="subtitle-message">Add New Reviews Using the Button Above.</div>
+          </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </template>

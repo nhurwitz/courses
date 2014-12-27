@@ -1,4 +1,4 @@
-@menu-width: 165px;
+@menu-width: 168px;
 @column: 5.55555%;
 @navbar-height: 75px;
 
@@ -79,8 +79,6 @@ body {
 
   @media screen and (min-width: 40em) {
     left: @menu-width;
-    width: 100%;
-    width: 100%;  
   }
 
   .wrapper-message {
@@ -156,6 +154,59 @@ body {
         margin-top: 1rem;
         position: relative;
       }
+    }
+  }
+
+
+  #course-header {
+    .title-caps;
+    padding-top: 1em;
+    text-align: center;
+    @media screen and (min-width: 40em) {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+  }
+
+  #add-review-button {
+    .position(absolute, 0, 0, 0, 0);
+    text-align: right;
+    padding-top: 1em;
+    padding-right: 2em;  
+  }
+  #back-button {
+    .position(absolute, 0, 0, 0, 0);
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 2em;  
+  }
+
+  #reviews {
+    .position(absolute, 0, 0, 0, 0);
+  }
+
+  #overall-rating {
+    text-align: center;
+  }
+
+  #ratings {
+    .position(absolute, 0, 0, 0, 0);
+    border: 1px solid #f0f9fb;
+    text-align:center;
+    @media screen and (min-width: 40em) {
+      margin: auto auto 0 0;
+      max-width: 50%;
+      max-height: 450px;
+    }
+  }
+
+  #text-reviews {
+    text-align:center;
+    border: 1px solid #f0f9fb;
+    @media screen and (min-width: 40em) {
+      margin: auto 0 0 auto;
+      max-width: 50%;
+      max-height: 450px;
     }
   }
 }

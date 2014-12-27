@@ -5,7 +5,7 @@
   .display(flex);
   .flex-wrap(wrap);
   height: 3rem;
-  width: 100%;
+  cursor: pointer;
   .title-caps;
   // Border between list items
   & + .list-item {
@@ -14,21 +14,33 @@
 
 
   .list-item-name {
-    width: 40%;
-    float: left;
+    width: 50%;
+    padding-left: 15px;
+   }
+
+   .list-item-rating {
+    width: 50%;
+    text-align:center;
     padding-left: 15px;
    }
 }
 
 .header {
   background: @color-tertiary;
-  font-style: bold;
-  .font-s2;
-  .title-caps();
+  /*background: @color-tertiary;*/
+  // Layout of list-item children
+  .display(flex);
+  .flex-wrap(wrap);
   margin-bottom: 10px;
+  .title-caps;
   .header-name {
-    width: 40%;
-    float: left;
+    width: 50%;
+    text-align: center;
+    padding-left: 15px;
+  }
+  .header-rating {
+    width: 50%;
+    text-align: center;
     padding-left: 15px;
   }
 }

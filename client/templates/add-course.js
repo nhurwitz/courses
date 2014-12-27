@@ -71,7 +71,7 @@ Template.addCourse.events({
         interesting: 0,
         hours: 0
       },
-      reviews: {}
+      reviews: []
     }); 
     Session.set(TO_MAIN, true);
     Session.set(TO_NEW_COURSE, false);
