@@ -27,5 +27,9 @@ Template.appBody.events({
   'click .js-to-main': function() {
       Session.set(TO_MAIN, true);
       Session.set(TO_NEW_COURSE, false);
+  },
+  'click .js-add-course': function() {
+      Session.set(TO_MAIN, false);
+      Session.set(TO_NEW_COURSE, true);
   }
 });	
