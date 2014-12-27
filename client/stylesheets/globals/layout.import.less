@@ -74,15 +74,18 @@ body {
     width: 100%;  
   }
 
+  .wrapper-message {
+    .position(absolute, 0, 0, 0, 0);
+    .transform(translate3d(0, 0, 0));
+    margin-top: 15%;
+    margin-right: @menu-width;
+  }
+
   .content-scrollable {
     .position(absolute, 0, 0, 0, 0);
     .transform(translate3d(0, 0, 0));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-
-    .row-fluid {
-      width: 100%;
-    }
   }
 
   #add-course-form {
