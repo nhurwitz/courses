@@ -3,8 +3,8 @@
   "print":                false,
 
   "scaffolding":          true,
-  "type":                 false,
-  "code":                 false,
+  "type":                 true,
+  "code":                 true,
   "grid":                 true,
   "tables":               true,
   "forms":                false,

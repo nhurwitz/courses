@@ -1,27 +1,23 @@
 <template name="home">
-  <div class="sidebar">
+  <div id="menu">
     <a href="{{pathFor 'appBody'}}" class="js-add-course">Add Course</a>
   </div>
-  <div class="main-container">
-    <div class="jumbotron">
-      {{#if courses this}}
-        <div class="list-item header">
-          <div class="row-fluid">
-            <div class="span4">Course Name</div>
-            <div class="span4">Course Rating</div>
-          </div>
-        </div>
-      {{/if}}    
+  <div id="content-container">
       <div class="content-scrollable list-items">
+        {{#if courses this}}
+          <div class="header">
+            <div class="header-name">Course Name</div>
+            <div class="header-rating">Course Rating</div>
+          </div>
+        {{/if}}    
         {{#each courses this}}
             {{> course}}
           {{else}}
             <div class="wrapper-message">
               <div class="title-message">No Courses Yet</div>
-              <div class="subtitle-message">Add New Courses Using the Button on the Left</div>
+              <div class="subtitle-message">Add New Courses Using the Button on the Left.</div>
             </div>
           {{/each}}
       </div>
-    </div>
   </div>
 </template>
