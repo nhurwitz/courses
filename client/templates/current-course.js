@@ -30,4 +30,19 @@ Template.currentCourse.helpers({
   reviews: function() {
     return Reviews.find({school: Meteor.user().school, course: Session.get(CURRENT_COURSE_VIEW)});
   }
+});
+
+Template.currentCourse.events({
+  'click .js-back-button': function() {
+    Session.set(TO_MAIN, true);
+    Session.set(TO_NEW_COURSE, false);
+    Session.set(TO_COURSE_VIEW, false);
+    Session.set(TO_NEW_REVIEW, false);
+  },
+  'click .js-new-review': function() {
+    Session.set(TO_MAIN, false);
+    Session.set(TO_NEW_COURSE, false);
+    Session.set(TO_COURSE_VIEW, false);
+    Session.set(TO_NEW_REVIEW, true);
+  },
 });_

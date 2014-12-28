@@ -170,20 +170,24 @@ body {
   }
 
   #add-review-button {
-    .position(absolute, 0, 0, 0, 0);
+    .position(absolute, 0, 0, auto, auto);
     text-align: right;
     padding-top: 1em;
     padding-right: 2em;  
   }
   #back-button {
-    .position(absolute, 0, 0, 0, 0);
+    .position(absolute, 0, auto, auto, 0);
     text-align: left;
     padding-top: 1em;
     padding-left: 2em;  
   }
 
-  #reviews {
-    .position(absolute, 0, 0, 0, 0);
+  .js-back-button {
+    cursor: pointer;
+  }
+
+  .js-new-review {
+    cursor: pointer;
   }
 
   #overall-rating {
@@ -191,24 +195,30 @@ body {
     text-align: center;
   }
 
+  #reviews {
+    @media screen and (min-width: 40em) {
+      margin: auto auto 0 0;
+      max-height: 70%;
+    }
+  }
+
   #ratings {
-    .position(absolute, 0, 0, 0, 0);
+    .position(absolute, 200px, 0, 0, 0);
     border: 1px solid #f0f9fb;
     text-align:center;
     @media screen and (min-width: 40em) {
       margin: auto auto 0 0;
       max-width: 50%;
-      max-height: 70%;
     }
   }
 
   #text-reviews {
+    .position(absolute, 200px, 0, 0, 0);
     text-align:center;
     border: 1px solid #f0f9fb;
     @media screen and (min-width: 40em) {
       margin: auto 0 0 auto;
       max-width: 50%;
-      max-height: 70%;
     }
   }
 }

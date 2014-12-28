@@ -32,13 +32,20 @@
       </div>
       {{#if toMain}}
     	  {{> home}}
+      {{else}}
+        {{#if toAddCourse}}
+          {{> addCourse}}
+        {{else}}
+          {{#if toCourseView}}
+            {{> currentCourse}}
+          {{else}}
+            {{#if toNewReview}}
+              {{> newReview}}
+            {{/if}}
+          {{/if}} 
+        {{/if}}
       {{/if}}
-      {{#if toAddCourse}}
-        {{> addCourse}}
-      {{/if}}
-      {{#if toCourseView}}
-        {{> currentCourse}}
-      {{/if}} 
+      
     </div>
   {{/if}}
   {{#unless currentUser}}

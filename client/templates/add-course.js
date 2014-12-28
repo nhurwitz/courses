@@ -42,6 +42,10 @@ Template.addCourse.events({
       errors.department = "Department Required";
     }
 
+    if(!department in DEPARTMENTS) {
+      errors.department = "Invalid Department";
+    }
+
     if (! courseNumber) {
       errors.courseNumber = 'Course Number Required';
     }
