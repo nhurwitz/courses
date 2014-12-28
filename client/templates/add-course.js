@@ -4,12 +4,19 @@ Template.addCourse.created = function() {
   Session.set(ERRORS_KEY, {});
 };
 
+Template.addCourse.rendered = function() {
+  Meteor.typeahead.inject();
+};
+
 Template.addCourse.helpers({
   errorMessages: function() {
     return _.values(Session.get(ERRORS_KEY));
   },
   errorClass: function(key) {
     return Session.get(ERRORS_KEY)[key] && 'error';
+  },
+  department: function() {
+    return Object.keys(DEPARTMENTS);
   }
 });
 
@@ -19,8 +26,7 @@ Template.addCourse.events({
 
     var courseName = template.$('[name=course-name]').val()
       .replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    var department = template.$('[name=department]').val()
-      .toUpperCase();
+    var department = template.$('[name=department]').val();
     var courseNumber = template.$('[name=course-number]').val();
     var professor = template.$('[name=professor]').val()
       .charAt(0).toUpperCase() + template.$('[name=professor]').val().slice(1);
@@ -43,12 +49,12 @@ Template.addCourse.events({
     if (isNaN(courseNumber)) {
       errors.courseNumber = 'Course Number Required';
     }
-
+    department = DEPARTMENTS[department];
     var courseId = department + courseNumber;
     var courses = Schools.find({name: school}).fetch()[0].courses;
     if(Courses.find({
       school: school,
-      department: department, 
+      department: department,
       courseNumber: courseNumber
     }).count() != 0) {
       errors.exists = "Course Already Exists";

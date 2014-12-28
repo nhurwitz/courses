@@ -19,7 +19,8 @@
             </div>
 
             <div class="input-symbol" {{errorClass 'department'}}>
-              <input type="text" name="department" placeholder="Department" />
+              <input class="typeahead" type="text" name="department" placeholder="Department"
+              autocomplete="off" spellcheck="off" data-source="department"/>
               <span class="icon-library" title="Department"></span>
             </div>
 

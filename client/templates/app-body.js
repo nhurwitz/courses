@@ -9,6 +9,7 @@ Session.setDefault(TO_COURSE_VIEW, false);
 
 CURRENT_COURSE_VIEW = "currentCourseView";
 
+
 Template.appBody.helpers({
     school: function () {
     	var s = Meteor.user().profile['school'];
