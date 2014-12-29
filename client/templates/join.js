@@ -22,7 +22,7 @@ Template.join.events({
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
-    var school = validEmail(email);
+    var school;
 
     var errors = {};
 
@@ -34,8 +34,10 @@ Template.join.events({
       errors.email = 'Email required';
     }
 
-    if(school == INVALID_EMAIL) {
-      errors.edu = '.edu address required';
+    if(validEmail(email) == INVALID_EMAIL) {
+      errors.email = 'Invalid .edu Address'
+    } else {
+      school = validEmail(email);
     }
 
     if (! password) {

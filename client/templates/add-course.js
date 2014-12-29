@@ -75,15 +75,19 @@ Template.addCourse.events({
       department: department,
       courseNumber: courseNumber,
       professor: [professor],
-      rating: {
-        overall: 0,
-        easy: 0,
-        interesting: 0,
-        hours: 0
-      },
-      reviews: []
+      overall: 0,
+      difficulty: 0,
+      interest: 0,
+      hours: 0,
+      numReviews: 0
     }); 
     Session.set(TO_MAIN, true);
     Session.set(TO_NEW_COURSE, false);
+  },
+  'click .js-back-button': function() {
+    Session.set(TO_MAIN, true);
+    Session.set(TO_NEW_COURSE, false);
+    Session.set(TO_COURSE_VIEW, false);
+    Session.set(TO_NEW_REVIEW, false);
   }
 });

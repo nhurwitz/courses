@@ -1,7 +1,3 @@
-Template.course.helpers({
-
-});
-
 Template.course.events({
   'click .list-item': function() {
     Session.set(CURRENT_COURSE_VIEW, this._id);

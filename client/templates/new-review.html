@@ -1,5 +1,47 @@
 <template name="newReview">
   <div id="content-container">
-  YOOOOOOOOOOO
+    <div id="back-button">
+        <span class="icon-undo js-back-button"></span>
+    </div>
+    <div id="course-header">
+      <h1 class="title-course">{{name}}</h1>
+      <p class="subtitle-course">{{dept}}{{courseNumber}}</p>
+    </div>
+
+    <form>
+      {{#if errorMessages}}
+        <div class="list-errors">
+          {{#each errorMessages}}
+            <div class="list-item">{{this}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
+
+      <div class="input-symbol" {{errorClass 'rating'}}>
+        <input type="text" name="overall" placeholder="Overall Rating" />
+        <span class="icon-star-empty" title="Overall Rating"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'hours'}}>
+        <input type="text" name="hours" placeholder="Hours per Week" />
+        <span class="icon-hour-glass" title="Hours per Week"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'interest'}}>
+        <input type="text" name="interest" placeholder="Interest Rating" />
+        <span class="icon-fire" title="Interest Rating"></span>
+      </div>
+
+      <div class="input-symbol" {{errorClass 'difficulty'}}>
+        <input type="text" name="difficulty" placeholder="Difficulty Rating" />
+        <span class="icon-stats-bars" title="Difficulty Rating"></span>
+      </div>
+
+      <div class="input-symbol">
+        <textarea name="comment" placeholder="Comment (Optional)"></textarea> 
+      </div>
+
+      <button type="submit" class="btn-primary">Submit Review</button>
+    </form>
   </div>
 </template>
