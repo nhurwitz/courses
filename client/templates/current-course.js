@@ -29,6 +29,9 @@ Template.currentCourse.helpers({
   },
   reviews: function() {
     return Reviews.find({school: Meteor.user().school, course: Session.get(CURRENT_COURSE_VIEW)});
+  },
+  professorNames: function() {
+    return Object.keys(Courses.find({_id:Session.get(CURRENT_COURSE_VIEW)}).fetch()[0].professor);
   }
 });
 

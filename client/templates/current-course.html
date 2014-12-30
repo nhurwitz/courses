@@ -6,6 +6,19 @@
       <div id="overall-rating">
           {{courseRating}}/5
       </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          All <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>All</li>
+          {{# each professorNames}}
+            {{> professorDropdown}}
+          {{/each}}
+        </ul>
+      </div>
+
     </div>
     <div id="add-review-button">
       <span class="icon-plus js-new-review"></span>
@@ -35,4 +48,8 @@
       </div>
     </div>
   </div>
+</template>
+
+<template name="professorDropdown">
+  <li>{{.}}</li>
 </template>
