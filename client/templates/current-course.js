@@ -13,19 +13,19 @@ Template.currentCourse.helpers({
   },
   courseRating: function() {
     var course = Courses.find({_id:Session.get(CURRENT_COURSE_VIEW)}).fetch()[0];
-    return toFixed(course.overall, 2);
+    return toFixed(course.metrics.overall, 2);
   },
   courseHours: function() {
     var course = Courses.find({_id:Session.get(CURRENT_COURSE_VIEW)}).fetch()[0];
-    return toFixed(course.hours, 2);
+    return toFixed(course.metrics.hours, 2);
   },
   courseInteresting: function() {
     var course = Courses.find({_id:Session.get(CURRENT_COURSE_VIEW)}).fetch()[0];
-    return toFixed(course.interest, 2);
+    return toFixed(course.metrics.interest, 2);
   },
   courseDifficulty: function() {
     var course = Courses.find({_id:Session.get(CURRENT_COURSE_VIEW)}).fetch()[0];
-    return toFixed(course.difficulty, 2);
+    return toFixed(course.metrics.difficulty, 2);
   },
   reviews: function() {
     return Reviews.find({school: Meteor.user().school, course: Session.get(CURRENT_COURSE_VIEW)});

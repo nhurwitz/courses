@@ -16,6 +16,10 @@
               </div>
             {{/if}}
 
+
+            <div class="input-symbol" {{errorClass 'exists'}}>
+            </div>
+
             <div class="input-symbol" {{errorClass 'courseName'}}>
               <input type="text" name="course-name" placeholder="Course Name" />
               <span class="icon-file-text" title="Course Name"></span>
@@ -32,7 +36,7 @@
               <span class="icon-hash" title="Course Number"></span>
             </div>
 
-            <div class="input-symbol" {{errorClass 'exists'}}>
+            <div class="input-symbol" {{errorClass 'professor'}}>
               <input type="text" name="professor" placeholder="Professor (Optional)" />
               <span class="icon-user-tie" title="Professor"></span>
             </div>

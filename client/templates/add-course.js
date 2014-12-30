@@ -53,6 +53,12 @@ Template.addCourse.events({
     if (isNaN(courseNumber)) {
       errors.courseNumber = 'Course Number Required';
     }
+
+    //fix
+    if(professor.match(/\d+/g)) {
+      errors.professor = 'Invalid Professor Name';
+    }
+
     department = DEPARTMENTS[department];
     var courseId = department + courseNumber;
     var courses = Schools.find({name: school}).fetch()[0].courses;
@@ -68,19 +74,55 @@ Template.addCourse.events({
     if (_.keys(errors).length) {
       return;
     }
+    if(professor) {
+    var id = Courses.insert({
+        school: school,
+        name: courseName,
+        department: department,
+        courseNumber: courseNumber,
+        professor: {},
+        metrics: {
+          overall: 0,
+          difficulty: 0,
+          interest: 0,
+          hours: 0,
+          numReviews: 0
+        }
+      });
 
-    Courses.insert({
+      var prof = {};
+      prof[professor] = {
+        name: professor,
+        overall: 0,
+        difficulty: 0,
+        interest: 0,
+        hours: 0,
+        numReviews: 0
+      };
+
+      Courses.update({
+        _id: id
+      }, {
+        $set: {
+          professor: prof
+        }
+      }); 
+    } else {
+      Courses.insert({
       school: school,
       name: courseName,
       department: department,
       courseNumber: courseNumber,
-      professor: [professor],
-      overall: 0,
-      difficulty: 0,
-      interest: 0,
-      hours: 0,
-      numReviews: 0
+      metrics: {
+        overall: 0,
+        difficulty: 0,
+        interest: 0,
+        hours: 0,
+        numReviews: 0
+      }
     }); 
+    }
+    
     Session.set(TO_MAIN, true);
     Session.set(TO_NEW_COURSE, false);
   },
